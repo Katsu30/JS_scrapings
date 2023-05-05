@@ -18,9 +18,6 @@ const stringifySync = require("csv-stringify/sync");
     const threadList = await page.$$("dd");
     const list = await Promise.all(threadList.map(async (item) => await item.innerText()))
 
-    console.log(threadTitle)
-    console.log(list)
-
     const data = [];
     data.push({ title: threadTitle, content: '' })
     list.forEach((item) => {
